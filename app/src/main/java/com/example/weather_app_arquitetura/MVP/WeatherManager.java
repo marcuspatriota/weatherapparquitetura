@@ -1,4 +1,4 @@
-package com.example.weather_app_arquitetura;
+package com.example.weather_app_arquitetura.MVP;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;

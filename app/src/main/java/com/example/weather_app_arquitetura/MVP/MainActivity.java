@@ -1,4 +1,4 @@
-package com.example.weather_app_arquitetura;
+package com.example.weather_app_arquitetura.MVP;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -19,10 +19,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.weather_app_arquitetura.presenter.FindItemAdapter;
-import com.example.weather_app_arquitetura.presenter.MainActivityIF;
-import com.example.weather_app_arquitetura.presenter.WeatherPresenter;
-import com.example.weather_app_arquitetura.presenter.WeatherPresenterIF;
+import com.example.weather_app_arquitetura.R;
 
 import java.util.ArrayList;
 

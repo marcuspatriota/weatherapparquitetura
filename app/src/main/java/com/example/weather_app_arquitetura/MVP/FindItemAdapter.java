@@ -1,4 +1,4 @@
-package com.example.weather_app_arquitetura.presenter;
+package com.example.weather_app_arquitetura.MVP;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.weather_app_arquitetura.R;
-import com.example.weather_app_arquitetura.WeatherManager;
 
 import java.util.ArrayList;
 

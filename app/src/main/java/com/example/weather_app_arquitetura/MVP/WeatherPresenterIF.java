@@ -1,4 +1,4 @@
-package com.example.weather_app_arquitetura.presenter;
+package com.example.weather_app_arquitetura.MVP;
 
 public interface WeatherPresenterIF {
     void searchByName(String search);

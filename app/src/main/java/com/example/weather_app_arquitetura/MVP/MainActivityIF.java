@@ -1,7 +1,5 @@
-package com.example.weather_app_arquitetura.presenter;
+package com.example.weather_app_arquitetura.MVP;
 
-
-import com.example.weather_app_arquitetura.WeatherManager;
 
 public interface MainActivityIF {
     void onFinishLoadingWithError();

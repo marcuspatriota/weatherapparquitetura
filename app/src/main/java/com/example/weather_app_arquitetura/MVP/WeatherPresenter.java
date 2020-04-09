@@ -1,8 +1,6 @@
-package com.example.weather_app_arquitetura.presenter;
+package com.example.weather_app_arquitetura.MVP;
 
 import android.content.Context;
-
-import com.example.weather_app_arquitetura.WeatherManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,7 +10,7 @@ public class WeatherPresenter implements WeatherPresenterIF {
 
     private WeatherSharedPref mSharedPref;
     private MainActivityIF mainActivityIF;
-    private Boolean isCity = false;
+    private Boolean isSearchCity = false;
 
     public WeatherPresenter(MainActivityIF activityIF){
         mainActivityIF=activityIF;
@@ -21,19 +19,19 @@ public class WeatherPresenter implements WeatherPresenterIF {
     }
 
     @Override
-    public void searchByName( String search) {
+    public void searchByName(String search) {
         WeatherManager.WeatherService wService = WeatherManager.getService();
         String units = mSharedPref.getTemperatureUnit();
         final Call<WeatherManager.FindResult> findCall = wService.find(search, units, WeatherManager.API_KEY);
         findCall.enqueue(new Callback<WeatherManager.FindResult>() {
             @Override
             public void onResponse(Call<WeatherManager.FindResult> call, Response<WeatherManager.FindResult> response) {
-                isCity = true;
+                isSearchCity = true;
                 mainActivityIF.onFinishLoading(response.body());
             }
             @Override
             public void onFailure(Call<WeatherManager.FindResult> call, Throwable t) {
-                isCity = true;
+                searchCity(true);
                 mainActivityIF.onFinishLoadingWithError();
             }
         });
@@ -46,7 +44,10 @@ public class WeatherPresenter implements WeatherPresenterIF {
         }
     }
     public Boolean isSearchCity(){
-        return isCity;
+        return isSearchCity;
+    }
+    private void searchCity(Boolean searchCity){
+        this.isSearchCity = searchCity;
     }
 
 }

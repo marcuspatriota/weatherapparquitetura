@@ -3,8 +3,9 @@ package com.example.weather_app_arquitetura;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.weather_app_arquitetura.presenter.MainActivityIF;
-import com.example.weather_app_arquitetura.presenter.WeatherPresenter;
+import com.example.weather_app_arquitetura.MVP.MainActivityIF;
+import com.example.weather_app_arquitetura.MVP.WeatherManager;
+import com.example.weather_app_arquitetura.MVP.WeatherPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;
